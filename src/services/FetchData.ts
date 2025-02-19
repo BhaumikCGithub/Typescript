@@ -17,9 +17,9 @@ export async function FetchData<T>({
     data = null,
     headers = { "Content-Type": "application/json" },
 }: FetchDataVariable): Promise<FetchDataResponse<T>> {  
-
+    
     try {
-        const response = await fetch(`http://localhost:5173/api/${url}`, {
+        const response = await fetch(`http://localhost:3000/api/${url}`, {  
             method,
             headers,
             body: data ? JSON.stringify(data) : null,
@@ -36,6 +36,7 @@ export async function FetchData<T>({
         }
 
         const userData = await response.json();
+        console.log(userData);
         return {
             status: 200,
             message: userData.message,

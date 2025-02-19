@@ -16,12 +16,13 @@ const Login: React.FC = () => {
     const navigate  =   useNavigate();
     const dispatch = useDispatch();
 
-    const loginUser: SubmitHandler<FormValues> = async (data: any) => {
+    const loginUser: SubmitHandler<FormValues> = async (data: any) => { console.log(data);
         try{ 
             const response = await AuthLogin(data);
+    
             if(response.status === 400){
                 const userData =response.data;
-                if(userData) { 
+                if(!userData) { 
                     //dispatch(login(userData));
                     navigate("/dashboard");
                 }
@@ -59,7 +60,6 @@ const Login: React.FC = () => {
               <label className="block text-gray-700 text-start font-medium">Password</label>
               <input
                 type="password"
-                
                 autoComplete="off"
                 placeholder="Enter your password"
                 className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
