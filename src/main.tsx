@@ -9,6 +9,7 @@ import Login from "./components/Auth/Login.tsx";
 import DashBoard from "./components/DashBoard/DashBoard.tsx";
 import CreateModule from "./components/DashBoard/CreateModule.tsx";
 import ModuleList from "./components/DashBoard/ModuleList.tsx";
+import RolePermission from "./components/DashBoard/RolePermission.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
           {
             path: "modules", // Should be relative
             element: <ModuleList />
+          },
+          {
+            path: "role-permission", // Should be relative
+            element: <RolePermission />
           },
         ],
       },

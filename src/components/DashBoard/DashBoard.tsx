@@ -31,9 +31,15 @@ const DashBoard = () => {
         </button>
         <button
           onClick={() => navigate("/dashboard/modules")}
-          className="px-4 py-2 bg-blue-500 text-white rounded w-full"
+          className="px-4 py-2 bg-blue-500 text-white rounded w-full mb-2 "
         >
           Module List
+        </button>
+        <button
+          onClick={() => navigate("/dashboard/role-permission")}
+          className="px-4 py-2 bg-blue-500 text-white rounded w-full"
+        >
+          Role Permission
         </button>
       </div>
 
